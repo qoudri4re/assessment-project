@@ -1,0 +1,85 @@
+<form class="ui form" (ngSubmit)="submitForm()">
+  <div class="field">
+    <label>First Name</label>
+    <input
+      type="text"
+      name="first-name"
+      placeholder="First Name"
+      [(ngModel)]="firstName"
+    />
+  </div>
+  <div class="field">
+    <label>Last Name</label>
+    <input
+      type="text"
+      name="last-name"
+      placeholder="Last Name"
+      [(ngModel)]="lastName"
+    />
+  </div>
+  <div class="field">
+    <label>Phone Number</label>
+    <input
+      type="number"
+      name="phone-number"
+      placeholder="Phone Number"
+      [(ngModel)]="phoneNumber"
+    />
+  </div>
+  <div class="field">
+    <label>Country</label>
+    <select
+      class="ui fluid dropdown"
+      [(ngModel)]="selectedCountry"
+      name="country"
+    >
+      <option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Occupation</label>
+    <select
+      class="ui fluid dropdown"
+      [(ngModel)]="selectedOccupation"
+      name="occupation"
+    >
+      <option *ngFor="let occupation of occupations" [value]="occupation">
+        {{ occupation }}
+      </option>
+    </select>
+  </div>
+
+  <div class="inline fields">
+    <label for="fruit">successful</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input
+          type="radio"
+          name="successful"
+          value="true"
+          [(ngModel)]="successful"
+        />
+        <label>True</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input
+          type="radio"
+          name="successful"
+          value="false"
+          [(ngModel)]="successful"
+        />
+        <label>False</label>
+      </div>
+    </div>
+  </div>
+  <button sui-button tabindex="0" suiAnimated="animated">
+    <div class="visible content">Submit</div>
+    <div class="hidden content">
+      <i sui-icon suiIconType="right arrow"></i>
+    </div>
+  </button>
+</form>
